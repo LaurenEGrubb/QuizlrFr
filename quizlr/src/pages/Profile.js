@@ -1,3 +1,5 @@
+import '../src/styles/App.css'
+
 function Profile (){
     return (
       <div>
