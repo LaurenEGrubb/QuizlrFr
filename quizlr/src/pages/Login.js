@@ -1,27 +1,17 @@
 import '../styles/App.css'
 
+
 function Login (){
   return (
     <div>
          <form className="loginform">
-          <div className="form-wrap">
-            <label htmlFor="email">Email</label>
-            <input
-              
-              name="email"
-              type="email"
-              placeholder="Email Address"
-              required
-            />
-          </div>
-          <div className="form-wrap">
+          
+            <label htmlFor="username">Username</label>
+            <input name="username"type="username"placeholder="Username"required/>
+         
             <label htmlFor="password">Password</label>
-            <input
-              name="password"
-              type="password"
-              placeholder='Password'
-            />
-          </div>
+            <input name="password"type="password"placeholder='Password'/>
+        
           <button>
             Login
           </button>

@@ -1,11 +1,16 @@
-import '../styles/App.css'
+import '../styles/App.css';
+import { Link } from 'react-router-dom';
 
 function Nav (){
     return (
-      <div>
+      <nav>
          <h4>Navbar</h4>
+         <div className='navlinks'>
+            <Link to="/login"> Login </Link>
+            <Link to="/register"> Register </Link>
+         </div>
           
-      </div>
+      </nav>
   
     )
   }

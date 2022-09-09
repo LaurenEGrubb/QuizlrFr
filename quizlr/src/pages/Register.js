@@ -1,14 +1,20 @@
-import '../styles/App.css'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-
+import '../styles/App.css';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Register (){
+  let navigate = useNavigate()
+  const [name, setName]= useState('');
+  const [email, setEmail]= useState('');
+  const [username, setUsername]= useState('');
+  const [password, setPassword]= useState('');
+  const [confirmPassword, setConfirmPassword]=useState('');
+
     return (
       <div>
          <h4>Register</h4>
          <form className="formregister">
-            <div>
+            <div className='innerform'>
               <label htmlFor="firstName">Name</label>
               <input placeholder="John"/>
         
