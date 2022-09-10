@@ -10,6 +10,16 @@ function Register (){
   const [password, setPassword]= useState('');
   const [confirmPassword, setConfirmPassword]=useState('');
 
+  const handleSubmit = async (error) => {
+    error.preventDefault();
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('username', username);
+    formData.append('password', password);
+    navigate('api/login')
+  }
+
     return (
       <div>
          <h4>Register</h4>
