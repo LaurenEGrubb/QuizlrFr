@@ -35,9 +35,9 @@ function App() {
      <header> <Nav /></header>
      <main>
       <Routes>
-        <Route path="/" element={<Main />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+        <Route path="/api" element={<Main />} />
+          <Route path="/api/user/login" element={<Login />} />
+          <Route path="/api/user/register" element={<Register />} />
           <Route path="/login/create" element={<Create />} />
           <Route path="/login/learn" element={<Study />} />
       </Routes>

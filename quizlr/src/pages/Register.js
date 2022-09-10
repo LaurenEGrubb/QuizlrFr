@@ -1,6 +1,7 @@
 import '../styles/App.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { RegisterUser } from '../services/Auth'
 
 function Register (){
   let navigate = useNavigate()
@@ -17,30 +18,32 @@ function Register (){
     formData.append('email', email);
     formData.append('username', username);
     formData.append('password', password);
-    navigate('api/login')
-  }
+    await RegisterUser(formData);
+    navigate('api/user/login')
+  };
 
     return (
       <div>
          <h4>Register</h4>
-         <form className="formregister">
+         <form className="formregister" onSubmit={handleSubmit}>
             <div className='innerform'>
               <label htmlFor="firstName">Name</label>
-              <input placeholder="John"/>
+              <input onChange={(e) => setName(e.target.value)} placeholder="John" value={name}/>
         
               <label htmlFor="username">Username</label>
-              <input placeholder='username'/>
+              <input onChange={(e) => setUsername(e.target.value)} value={username}placeholder='username'/>
 
               <label htmlFor="email">Email Address</label>
-              <input placeholder="myemail@email.com"/>
+              <input onChange={(e) => setEmail(e.target.value)} value={email} placeholder="myemail@email.com"/>
             
               <label htmlFor="password">Password</label>
-              <input/>
+              <input onChange={(e) => setPassword(e.target.value)} value={password}/>
            
               <label htmlFor="confirmPassword">Confirm Password</label>
-              <input/>
+              <input onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword} />
             </div>
-            <button>
+            <button
+            disabled={!email || (!password && confirmPassword === password)}>
               Sign Up
             </button>
           </form>
