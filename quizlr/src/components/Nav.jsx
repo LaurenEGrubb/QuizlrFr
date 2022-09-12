@@ -6,8 +6,8 @@ function Nav (){
       <nav>
          <h4>Navbar</h4>
          <div className='navlinks'>
-            <Link to="api/user/login"> Login </Link>
-            <Link to="api/user/register"> Register </Link>
+            <Link to="api/users/login"> Login </Link>
+            <Link to="api/users/register"> Register </Link>
          </div>
           
       </nav>

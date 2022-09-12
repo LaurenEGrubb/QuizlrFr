@@ -13,6 +13,7 @@ import '../src/styles/App.css'
 import axios from 'axios'
 
 
+
 function App() {
 
   const [user, setUser] = useState(null)
@@ -36,10 +37,10 @@ function App() {
      <main>
       <Routes>
         <Route path="/api" element={<Main />} />
-          <Route path="/api/user/login" element={<Login />} />
-          <Route path="/api/user/register" element={<Register />} />
+          <Route path="/api/users/login/" element={<Login />} /> 
+          <Route path="/api/users/register/" element={<Register />} />
           <Route path="/login/create" element={<Create />} />
-          <Route path="/login/learn" element={<Study />} />
+          <Route path="/login/learn" element={<Study />} /> 
       </Routes>
      </main>
       
