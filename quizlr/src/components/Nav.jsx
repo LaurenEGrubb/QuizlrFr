@@ -7,7 +7,7 @@ function Nav (){
          <h4>Navbar</h4>
          <div className='navlinks'>
             <Link to="api/users/login"> Login </Link>
-            <Link to="api/users/register"> Register </Link>
+            <Link to="/users/register"> Register </Link>
          </div>
           
       </nav>

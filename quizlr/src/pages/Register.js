@@ -21,7 +21,7 @@ function Register (){
     //   password:'',
     //   confirmPassword:''
     // })
-    console.log(password)
+   
   }
 
     return (
