@@ -17,7 +17,7 @@ const Login = ({ setUser, toggleAuthenticated, user }) => {
       setFormValues({ username:'', password:''})
       setUser(payload)
       toggleAuthenticated(true)
-      navigate('/api')
+      navigate('/login/createset')
     }
 
   return (

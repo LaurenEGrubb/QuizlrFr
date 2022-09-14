@@ -47,7 +47,8 @@ function App() {
           
           /> 
           <Route path="/users/register/" element={<Register />} />
-          <Route path="/login/create" element={<Create />} />
+          <Route path="/login/createset" element={<Create 
+          user={user}/>} />
           <Route path="/login/learn" element={<Study />} /> 
       </Routes>
      </main>

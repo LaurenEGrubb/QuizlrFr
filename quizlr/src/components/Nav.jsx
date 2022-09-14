@@ -8,6 +8,7 @@ function Nav (){
          <div className='navlinks'>
             <Link to="api/users/login"> Login </Link>
             <Link to="/users/register"> Register </Link>
+            <Link to="/login/createset">Create</Link>
          </div>
           
       </nav>

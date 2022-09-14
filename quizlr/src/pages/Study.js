@@ -1,6 +1,24 @@
+import { useEffect, useState } from 'react'
 import '../styles/App.css'
+import { useNavigate, Link } from 'react-router-dom'
+import { GetSetsByUser, DeleteSet, EditSet } from '../services/PostServices'
 
-function Study (){
+const Study = ({ user }) => {
+    let navigate = useNavigate()
+    const [updateFlashcard, setUpdateFlashcard] = useState(false)
+    const [flashcard, setFlashcards] = useState([])
+    const [deleteFlashcard, setDeleteFlashcard] = useState(false)
+    const deleteSet = async (flashcardId) => {
+        const res = await DeleteSet(flashcardId)
+        setDeleteFlashcard(true)
+    }
+    useEffect(() => {
+        const showFlashcards = async () => {
+            const data = await GetSetsByUser(user.id)
+            setFlashcards(data)
+        }
+        showFlashcards()
+    }, [deleteFlashcard, EditSet])
     return (
       <div>
          <h4>Study</h4>
@@ -12,11 +30,10 @@ function Study (){
 
     
             <Link className="editbutton"to={`/edit/${flashcard.id}`}>Edit Flashcard</Link>
-            {/* <EditPost posts={posts} /> */}
+            
 
             <div>
               <button onClick={() => deleteFlashcard(flashcard.id)} className="delete">X</button>
-              <div></div>
             </div>
           </div>
         ))}
