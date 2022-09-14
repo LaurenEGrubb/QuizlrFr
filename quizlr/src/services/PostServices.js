@@ -20,7 +20,7 @@ export const NewSet = async (data, userId) => {
 
 export const SetFlashcards = async (flashcardId) => {
   try {
-    const res = await Client.get(`api/flashcards/${flashcardId}/get`)
+    const res = await Client.get(`api/sets/details`)
     return res.data
   } catch (e) {
     throw e

@@ -50,7 +50,7 @@ function App() {
           <Route path="/users/register/" element={<Register />} />
           <Route path="/login/createset" element={<Create 
           user={user}/>} />
-          <Route path="/login/learn" element={<SetDetails />} /> 
+          <Route path="/api/sets/learn" element={<SetDetails />} /> 
       </Routes>
      </main>
       

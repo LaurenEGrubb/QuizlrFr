@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { RegisterUser } from '../services/Auth'
 import Client from '../services/api';
 import { BASE_URL } from '../services/api'
+import '../styles/App.css'
 function Register (){
   let navigate = useNavigate()
   const [username, setUsername]= useState('');

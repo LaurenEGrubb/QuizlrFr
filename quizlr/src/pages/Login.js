@@ -4,6 +4,7 @@ import { SignInUser } from '../services/Auth'
 import { useNavigate } from 'react-router-dom'
 import react from 'react'
 import BASE_URL from '../services/api'
+import '../styles/App.css'
 
 const Login = ({ setUser, toggleAuthenticated, user }) => {
     const navigate = useNavigate()
