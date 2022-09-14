@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import '../styles/App.css'
 import { useNavigate, Link } from 'react-router-dom'
 import { GetSets, DeleteSet, EditSet } from '../services/PostServices'
-
+// comment
 const Study = ({ user }) => {
     let navigate = useNavigate()
     const [updateFlashcard, setUpdateFlashcard] = useState(false)
