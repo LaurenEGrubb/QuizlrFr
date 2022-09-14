@@ -6,3 +6,19 @@ h4 {
   font-size: larger;
   color: black;
 }
+.navlinks {
+  background-color: rgb(162, 162, 244);
+  height: 10vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-right: 60vw;
+}
+.watchlistinputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.links {
+  font: bolder;
+}

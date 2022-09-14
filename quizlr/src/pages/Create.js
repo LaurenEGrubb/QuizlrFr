@@ -12,7 +12,7 @@ import '../styles/App.css'
 const Create = ({ set, user, flashcard, showFlashcards }) => {
 const initialState = {
     userId: 1,
-    setname :""
+    
 }
 const showSets = async () => {
   const data = await axios.get(`${BASE_URL}/api/sets/`)
@@ -25,7 +25,7 @@ const [flashcards, setFlashcards] = useState([])
 let { userId } = useParams()
 
 const [formState, setFormState] = useState(initialState)
-const SetDelete = async (setId) => {
+const DeleteSet = async (setId) => {
   const res = await DeleteSet(setId)
   
   showSets()
@@ -65,7 +65,7 @@ useEffect(() => {
                 <h3>{set.setname}</h3>
                 <h2>{set.id}</h2>
                 <button onClick={() => navigate('/api/sets/learn')}> Set Details</button>
-                <button onClick={() => SetDelete(set.id)}>Delete</button>
+                <button onClick={() => DeleteSet(set.id)}>Delete</button>
                 <EditCreate id={set.id} />
 
                 </div>
