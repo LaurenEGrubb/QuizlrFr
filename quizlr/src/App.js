@@ -6,6 +6,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Nav from './components/Nav'
 import Create from './pages/Create'
+import EditCreate from './pages/EditCreate'
 import Flashcard from './components/Flashcard'
 import Study from './pages/Study';
 import Main from './pages/Main'
@@ -51,6 +52,8 @@ function App() {
           <Route path="/login/createset" element={<Create 
           user={user}/>} />
           <Route path="/api/sets/learn" element={<SetDetails />} /> 
+          <Route path="/login/createset/edit" element={<EditCreate 
+          user={user}/>} />
       </Routes>
      </main>
       
