@@ -3,7 +3,7 @@ import { useParams } from 'react-router'
 import { SetFlashcards, NewSet, DeleteFlashcard } from '../services/PostServices'
 import axios from 'axios'
 import { BASE_URL } from '../services/api'
-// comment
+
 const SetDetails = ({ user }) => {
   const [set, setSet] = useState([])
   const [deleteFlashcard, setDeleteFlashcard] = useState(false)
