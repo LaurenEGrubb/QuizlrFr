@@ -15,7 +15,9 @@ const initialState = {
 const [sets, setSets] = useState([])
 const [flashcards, setFlashcards] = useState([])
 let { userId } = useParams()
-
+nextPath(path) {
+  this.props.history.push(path);
+}
 const [formState, setFormState] = useState(initialState)
 
 const handleChange = (event) => { setFormState({...formState, [event.target.id]: event.target.value})}
@@ -54,7 +56,7 @@ useEffect(() => {
             {sets?.map((set) => (
                 <div className='setcard' key={set.id}>
                 <h1>{set.setname}</h1>
-                <button onClick={() => Navigate('/login/learn')}></button>
+                <button onClick={() => this.nextPath('/login/learn')}></button>
                 </div>
             ))}
           </div>
