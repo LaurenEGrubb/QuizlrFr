@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import '../styles/App.css'
 import { useNavigate, Link } from 'react-router-dom'
-import { GetSetsByUser, DeleteSet, EditSet } from '../services/PostServices'
+import { GetSets, DeleteSet, EditSet } from '../services/PostServices'
 
 const Study = ({ user }) => {
     let navigate = useNavigate()
@@ -14,7 +14,7 @@ const Study = ({ user }) => {
     }
     useEffect(() => {
         const showFlashcards = async () => {
-            const data = await GetSetsByUser(user.id)
+            const data = await GetSets()
             setFlashcards(data)
         }
         showFlashcards()

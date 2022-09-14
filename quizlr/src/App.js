@@ -12,6 +12,7 @@ import Main from './pages/Main'
 import '../src/styles/App.css'
 import axios from 'axios'
 import { CheckSession } from './services/Auth'
+import SetDetails from './pages/SetDetails'
 
 
 function App() {
@@ -49,7 +50,7 @@ function App() {
           <Route path="/users/register/" element={<Register />} />
           <Route path="/login/createset" element={<Create 
           user={user}/>} />
-          <Route path="/login/learn" element={<Study />} /> 
+          <Route path="/login/learn" element={<SetDetails />} /> 
       </Routes>
      </main>
       

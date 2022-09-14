@@ -5,7 +5,7 @@ import '../styles/App.css'
 function Main (){
     return (
       <div>
-         <h4>Cultivate your Knowledge</h4>
+         
           
       </div>
   

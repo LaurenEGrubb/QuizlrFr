@@ -44,9 +44,9 @@ export const EditSet = async (data, setId) => {
     throw e
   }
 }
-export const GetSetsByUser = async (userId) => {
+export const GetSetsByUser = async () => {
     try {
-      const res = await Client.get(`api/sets/${userId}`)
+      const res = await Client.get(`api/sets/`)
       return res.data
     } catch (e) {
       throw e
