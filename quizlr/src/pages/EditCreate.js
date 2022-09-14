@@ -3,7 +3,7 @@ import { GetSets, EditSet } from '../services/PostServices'
 import { useParams } from 'react-router-dom'
 import { BASE_URL } from '../services/api'
 import { useNavigate } from 'react-router-dom'
-// comment
+
 const EditCreate = ({id}) => {
   let navigate = useNavigate()
  
