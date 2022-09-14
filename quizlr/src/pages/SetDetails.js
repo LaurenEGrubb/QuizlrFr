@@ -8,10 +8,16 @@ const SetDetails = ({ user }) => {
   const [set, setSet] = useState([])
   const [deleteFlashcard, setDeleteFlashcard] = useState(false)
   const [flashcards, setFlashcards] = useState([])
-
+  const showFlashcards = async () => {
+    const data = await axios.get(`${BASE_URL}/api/sets/details/`)
+            setFlashcards(data.data)
+            console.log(flashcards)
+    
+}
   const flashcardDelete = async (flashcardId) => {
     const res = await DeleteFlashcard(flashcardId)
     setDeleteFlashcard(true)
+    showFlashcards()
   }
   const initialState = {
     flashcardId: 1,
@@ -20,15 +26,10 @@ const SetDetails = ({ user }) => {
 }
 const [formState, setFormState] = useState(initialState)
   useEffect(() => {
-    const showFlashcards = async () => {
-        const data = await axios.get(`${BASE_URL}/api/sets/details/`)
-                setFlashcards(data.data)
-                console.log(flashcards)
-        
-    }
+  
     showFlashcards()
 }, [])
-  console.log(set)
+  
 
   return (
     <div>

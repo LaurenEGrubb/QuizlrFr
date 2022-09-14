@@ -63,7 +63,7 @@ export const GetSetsByUser = async () => {
   }
   export const DeleteFlashcard = async (flashcardId) => {
     try {
-      const res = await Client.delete(`api/flashcards/${flashcardId}`)
+      const res = await Client.delete(`api/flashcards/${flashcardId}/delete`)
       return res.data
     } catch (e) {
       throw e
