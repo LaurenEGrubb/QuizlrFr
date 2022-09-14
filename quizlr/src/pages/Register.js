@@ -10,7 +10,7 @@ function Register (){
   const [username, setUsername]= useState('');
   const [password, setPassword]= useState('');
   const [confirmPassword, setConfirmPassword]=useState('');
-
+// comment
   const handleSubmit = async (e) => {
     e.preventDefault()
     await RegisterUser({
