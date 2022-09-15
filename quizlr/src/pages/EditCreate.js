@@ -3,40 +3,36 @@ import { GetSets, EditSet } from '../services/PostServices'
 import { useParams } from 'react-router-dom'
 import { BASE_URL } from '../services/api'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
-const EditCreate = ({id}) => {
+const EditCreate = ({ sets, setSets}) => {
   let navigate = useNavigate()
+  
+let { index, id } = useParams()
  
   const [set, setSet] = useState({})
-  const [flashcards, setFlashcards] = useState([])
-
-  const [formValue, setFormValue] = useState('')
-  const handleChange = (error) => {
-    setFormValue({ ...formValue, [error.target.setname]: error.target.value })
-    
+ const initialState={
+    setname: sets[index].setname
+ }
+console.log(sets[index].setname)
+  const [formValue, setFormValue] = useState(initialState)
+  const handleChange = (event) => {
+    setFormValue({ ...formValue, [event.target.id]: event.target.value })
+    console.log(formValue)
   }
- const showSets = async () => {
-      const data = await GetSets()
-      console.log(id)
-      const singleSet = data.filter((set) => set.id == set.id)
-      setSet(singleSet[0])
-      setFormValue({
-        setname: set?.setname,
-        
-      })
-    }
-  useEffect(() => {
-   
-    showSets()
-  }, [])
 
+console.log(sets[index].id)
   const handleSubmit = async (event) => {
+    console.log("hello")
     event.preventDefault()
-    console.log(id)
-    const payload = await EditSet(formValue, id)
-    showSets()
-
+    console.log('world')
+    console.log(formValue)
+    let res = await axios.put(`${BASE_URL}/api/sets/${sets[index].id}`, formValue)
+    // showSets()
+    console.log("very great")
+    setFormValue(initialState)
     navigate('/login/createset')
+    
   }
 
   return (
@@ -46,14 +42,14 @@ const EditCreate = ({id}) => {
           <label htmlFor="name">Edit Set Name</label>
           <input
             onChange={handleChange}
-            setname="setname"
             type="text"
             value={formValue.setname}
-            required
+            id="setname"
+            // required
           />
         </div>
     
-        <button>Confirm Changes</button>
+        <button type="submit">Confirm Changes</button>
       </form>
     </div>
   )

@@ -18,7 +18,7 @@ import SetDetails from './pages/SetDetails'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
-
+  const [sets, setSets] = useState([])
   const [user, setUser] = useState(null)
   
   const checkStatus = async () => {
@@ -50,10 +50,15 @@ function App() {
           /> 
           <Route path="/users/register/" element={<Register />} />
           <Route path="/login/createset" element={<Create 
-          user={user}/>} />
+          user={user}
+          sets={sets}
+          setSets={setSets}
+          />} />
           <Route path="/api/sets/learn" element={<SetDetails />} /> 
-          <Route path="/login/createset/edit" element={<EditCreate 
-          user={user}/>} />
+          <Route path="/edit/:setId/:index" element={<EditCreate 
+          user={user}
+          sets={sets}
+          setSets={setSets}/>} />
       </Routes>
      </main>
       

@@ -55,8 +55,8 @@ export const GetSetsByUser = async () => {
   
   export const DeleteSet = async (setId) => {
     try {
-      const res = await Client.delete(`api/sets/delete/${setId}`)
-      return res.data
+      await Client.delete(`api/sets/delete/${setId}`)
+      GetSetsByUser()
     } catch (e) {
       throw e
     }
