@@ -23,7 +23,19 @@ h4 {
   font: bolder;
 }
 
-h2{
+h2, h3{
   justify-content: center;
   align-content: center;
+  border: 1px solid black;
+  height: 5vh;
+  width: 10vw;
+}
+
+html {
+  justify-content: center;
+}
+.create-set{
+  display:flex;
+  flex-direction:column-reverse;
+  justify-content: space-between;
 }

@@ -48,7 +48,7 @@ useEffect(() => {
 }, [])
 
     return (
-    <div className="create-watchlist">
+    <div className="create-set">
       <form className="form" onSubmit={handleSubmit}>
         <div className="watchlistInputs">
           <label htmlFor="watchlist">User Name:</label>
